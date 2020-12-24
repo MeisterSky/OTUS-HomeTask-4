@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
-public class BrowserFactory {
+public class WebDriverFactory {
 
     public static final String CHROME = "chrome";
     public static final String FIREFOX = "firefox";

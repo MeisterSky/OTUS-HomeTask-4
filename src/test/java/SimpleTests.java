@@ -1,4 +1,3 @@
-import config.PropertyLoader;
 import config.ServerConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
@@ -8,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import webdrivers.BrowserFactory;
+import webdrivers.WebDriverFactory;
 
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
@@ -24,7 +23,7 @@ public class SimpleTests {
 
         logger.info("Запускаю веб драйвер");
 //        driver = BrowserFactory.getInstance(PropertyLoader.getProperty("browser.name"), PropertyLoader.getProperty("browser.lang"));
-        driver = BrowserFactory.getInstance(cfg.browserName(), cfg.browserLang());
+        driver = WebDriverFactory.getInstance(cfg.browserName(), cfg.browserLang());
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         logger.info("Разворачиваю браузер на весь экран");
         driver.manage().window().maximize();
